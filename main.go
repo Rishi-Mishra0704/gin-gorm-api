@@ -38,4 +38,7 @@ func main() {
 	r.POST("/todos", createTodo)
 	r.PUT("/todos/:id", updateTodo)
 	r.DELETE("/todos/:id", deleteTodo)
+
+	// Run the server
+	r.Run(":8080")
 }
