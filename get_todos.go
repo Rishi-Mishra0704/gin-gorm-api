@@ -15,3 +15,14 @@ func getTodos(c *gin.Context) {
 		c.JSON(200, todos)
 	}
 }
+
+func getTodo(c *gin.Context) {
+	param := c.Param("id")
+	var todo Todo
+	if err := db.Where("id = ?", param).First(&todo).Error; err != nil {
+		c.AbortWithStatus(404)
+		fmt.Println(err)
+	} else {
+		c.JSON(200, todo)
+	}
+}
