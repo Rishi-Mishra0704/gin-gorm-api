@@ -20,7 +20,7 @@ type Todo struct {
 }
 
 func main() {
-	dsn := "host=localhost user=rishi password=1111 dbname=gin_gorm_api port=5432 sslmode=disable"
+	dsn := "host=localhost user=user password=password dbname=db-name port=5432 sslmode=disable"
 	db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		fmt.Println(err)
